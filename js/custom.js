@@ -37,3 +37,8 @@ function confirmMessage(message) {
         });
     });
 }
+
+function clear() {
+    $("#txtUserName").val("");
+    $("#txtUserName").focus();
+}
