@@ -42,3 +42,13 @@ function clear() {
     $("#txtUserName").val("");
     $("#txtUserName").focus();
 }
+
+//Notiflix save function
+function notiMessage(message){
+    Notiflix.Notify.success(message);
+}
+
+//Notiflix update fun
+function notiUpdate(message){
+    Notiflix.Notify.warning(message)
+}

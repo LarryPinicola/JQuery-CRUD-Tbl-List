@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="plugins/dist/notiflix-3.2.6.min.css">
 </head>
 
 <body>
@@ -44,6 +45,8 @@
         crossorigin="anonymous"></script>
     <!-- sweetAlert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- notiflix -->
+    <script src="plugins/dist//notiflix-3.2.6.min.js"></script>
     <script src="./js/custom.js"></script>
 
     <script>
@@ -79,7 +82,8 @@
 
             users.push(user);
             localStorage.setItem("tbl_user", JSON.stringify(users));
-            successMessage("Saving Successful");
+            //successMessage("Saving Successful");
+            notiMessage("Saving Successful!")
             clear();
             readUser();
         }
@@ -91,7 +95,8 @@
             console.log(userIndex);
             users[userIndex].UserName = text;
             localStorage.setItem("tbl_user", JSON.stringify(users));
-            successMessage("Update successful");
+            // successMessage("Update successful");
+            notiUpdate("Updated Successful!");
             _userId = null;
             clear();
             readUser();
@@ -149,7 +154,7 @@
 
         function deleteUser(userId) {
             console.log(userId);
-            confirmMessage("Are you sure want to delete?").then((result) => {
+            confirmMessage("Are you sure you want to delete?").then((result) => {
                 if (!result) return;
                 _userId = userId;
                 let users = getUser();
